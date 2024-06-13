@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: fastapi-ml-project
+    env: python
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: python -m uvicorn main:app --host 0.0.0.0 --port 10000 --reload
+    envVars:
+      - key: PORT
+        value: 10000
